@@ -317,6 +317,13 @@
         opacity: 0;
     }
 }
+        .name-top {
+    display: block;
+    font-size: clamp(60px, 7vw, 90px);
+    font-weight: 800;
+    color: #e83a5a;
+    margin-bottom: 10px;
+}
     </style>
 </head>
 
@@ -326,8 +333,11 @@
     <div class="wrap">
         <div class="card" id="askCard">
             <div class="banner"></div>
-            <h1><span class="name" id="who">Shivani</span>,<br />will you be my Valentine?
-                <span class="tiny-hearts" aria-hidden="true"><span>💗</span><span>💞</span></span>
+            <h1><span class="name-top" id="who">Chaitu</span>,<br>
+    will you be my Valentine?
+    <span class="tiny-hearts" aria-hidden="true">
+        <span>💗</span><span>💞</span>
+    </span>
             </h1>
             <p class="sub">Choose wisely. (The “No” button is… shy.)</p>
 
@@ -366,7 +376,7 @@
     <script>
 
         const urlParams = new URLSearchParams(window.location.search);
-        const WIFE_NAME = urlParams.get('valentineName');
+        const WIFE_NAME = urlParams.get('valentineName') || "Chaitu";
         const selfName = urlParams.get('name');
         // ✅ Tweak how hard NO is to click
         const EVADE_DISTANCE = 50;
