@@ -105,7 +105,7 @@
 
         h1 {
             margin: 6px 0 8px;
-            font-size: clamp(34px, 5vw, 58px);
+            font-size: clamp(22px, 3.2vw, 32px);
             line-height: 1.05;
             letter-spacing: .3px;
             color: var(--ink);
@@ -319,10 +319,11 @@
 }
         .name-top {
     display: block;
-    font-size: clamp(30px, 5vw, 50px);
+    font-size: clamp(26px, 3vw, 36px);
     font-weight: 800;
     color: #e83a5a;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
+    line-height: 1;
 }
     </style>
 </head>
@@ -333,11 +334,13 @@
     <div class="wrap">
         <div class="card" id="askCard">
             <div class="banner"></div>
-            <h1><span class="name-top" id="who">Chaitu,</span><br>
+            <h1>
+    <span class="name-top" id="who">Chaitu,</span><br>
     will you be my Valentine?
     <span class="tiny-hearts" aria-hidden="true">
         <span>💗</span><span>💞</span>
     </span>
+</h1>
             </h1>
             <p class="sub">Choose wisely. (The “No” button is… shy.)</p>
 
@@ -449,13 +452,11 @@
         const funnyNoTexts = [
             "This could be a mistake!",
             "Think again 😶‍🌫️",
-            "Don’t do this to me 💔",
-            "Give it another thought!",
-            "You might regret this!",
-            "Really sure ?",
-            "Surely not!",
-            "Last chance! 😬",
-            "Are you absolutely certian? 🙅‍♂️",
+            "Please give us another chance 💖",
+    "Let’s try again 🥹",
+    "Don’t say no to us 💕",
+    "Our memories deserve more ✨",
+    "Please think once more ❤️"
             "I will cry 😭",
             "Please no 🥺",
         ];
