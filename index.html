@@ -41,10 +41,8 @@
                 radial-gradient(1000px 600px at 80% 70%, var(--pink2), transparent 55%),
                 linear-gradient(135deg, #fff0f6, #fde7f2);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
 
         /* floating hearts */
@@ -78,8 +76,9 @@
         }
 
         .wrap {
-            width: min(980px, 92vw);
-            padding: 28px 18px;
+           width: min(980px, 92vw);
+    margin: 20px auto;
+    padding: 20px;
         }
 
         .card {
@@ -290,7 +289,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    width: min(520px, 90vw);
+    width: min(520px, 95vw);
     margin: 20px auto;
 }
 
@@ -324,6 +323,21 @@
     color: #e83a5a;
     margin-bottom: 0px;
     line-height: 1;
+}
+        @media (max-width: 768px) {
+    .photo-collage {
+        grid-template-columns: 1fr;
+        width: 95vw;
+    }
+
+    .photo-collage img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card {
+        padding: 16px;
+    }
 }
     </style>
 </head>
