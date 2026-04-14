@@ -286,6 +286,37 @@
             font-size: 13px;
             color: rgba(122, 31, 61, 0.45);
         }
+        .photo-collage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: min(520px, 90vw);
+    margin: 20px auto;
+}
+
+.photo-collage img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.heart-burst {
+    position: fixed;
+    font-size: 28px;
+    pointer-events: none;
+    animation: burst 2s ease-out forwards;
+}
+
+@keyframes burst {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-300px) scale(1.5);
+        opacity: 0;
+    }
+}
     </style>
 </head>
 
@@ -314,15 +345,18 @@
         </div>
 
         <div class="card hidden" id="yayCard">
-            <h2 class="yay">💖 YAY!!! 💖</h2>
-            <p class="yayline">Best decision ever 😘</p>
+    <h2 class="yay">💖 YAY!!! 💖</h2>
+    <p class="yayline"> Best decision ever 😘 Let’s make beautiful memories again 💕</p>
 
-            <div class="gifbox">
-                <img alt="Celebration" src="./Rishi.jpg" />
-            </div>
+    <div class="photo-collage">
+        <img src="photo1.jpg" alt="memory1">
+        <img src="photo2.jpg" alt="memory2">
+        <img src="photo3.jpg" alt="memory3">
+        <img src="photo4.jpg" alt="memory4">
+    </div>
 
-            <div class="love">I love you ❤️</div>
-            <div class="love" id="whoself">I love you ❤️</div>
+    <div class="love">Some bonds are too special to lose 💖 I love you ❤️</div>
+    <div class="love" id="whoself">~ Jhanu</div>
 
         </div>
     </div>
@@ -383,9 +417,23 @@
         });
 
         yesBtn.addEventListener("click", () => {
-            askCard.classList.add("hidden");
-            yayCard.classList.remove("hidden");
-            startConfetti();
+
+    for (let i = 0; i < 25; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart-burst";
+        heart.innerHTML = ["💖","💗","💘","💕"][Math.floor(Math.random()*4)];
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = window.innerHeight + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 2000);
+    }
+
+    setTimeout(() => {
+        askCard.classList.add("hidden");
+        yayCard.classList.remove("hidden");
+        startConfetti();
+    }, 1800);
         });
 
         const funnyNoTexts = [
