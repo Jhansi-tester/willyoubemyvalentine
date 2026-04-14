@@ -481,24 +481,20 @@
             "Our goals still need both of us ✨",
     "Let’s heal together 💖",
             "I will cry 😭",
-            "Please no 🥺",
         ];
-        let lastNoTextIndex = -1;
+     let currentNoTextIndex = 0;
+let resetTimer;
 
-        function setFunnyNoText() {
+function setFunnyNoText() {
+    noBtn.textContent = funnyNoTexts[currentNoTextIndex];
 
-            let idx = Math.floor(Math.random() * funnyNoTexts.length);
-            if (idx === lastNoTextIndex) idx = (idx + 1) % funnyNoTexts.length;
-            lastNoTextIndex = idx;
+    currentNoTextIndex =
+        (currentNoTextIndex + 1) % funnyNoTexts.length;
 
-            noBtn.textContent = funnyNoTexts[idx];
-
-            // optional: reset back to "NO" after a bit
-            clearTimeout(resetTimer);
-            resetTimer = setTimeout(() => {
-                if (!evasionStarted) noBtn.textContent = "NO";
-            }, 1200);
-
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+        if (!evasionStarted) noBtn.textContent = "NO";
+    }, 1200);
         }
 
         function isMobileLike() {
