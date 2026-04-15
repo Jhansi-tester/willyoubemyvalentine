@@ -429,7 +429,10 @@
         let resetTimer;
 
         document.getElementById("who").textContent = WIFE_NAME;
-        document.getElementById("whoself").textContent = `~ ${selfName}`;
+        const selfEl = document.getElementById("whoself");
+if (selfEl) {
+    selfEl.textContent = `~ ${selfName}`;
+}
 
 
         const askCard = document.getElementById("askCard");
