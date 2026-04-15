@@ -338,6 +338,22 @@
         padding: 16px;
     }
 }
+        .video-btn {
+    margin-top: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #ff6b9a, #e83a5a);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(232, 58, 90, 0.25);
+}
+
+.video-btn:hover {
+    transform: scale(1.03);
+}
     </style>
 </head>
 
@@ -389,9 +405,11 @@
         <img src="photo3.jpg" alt="memory3">
         <img src="photo4.jpg" alt="memory4">
     </div>
-<div class="love">Forever us 💕</div>
-    <div class="love" id="whoself">~ Chansi </div>
-
+<div class="love">Forever us 💕 Chansi 💕 </div>
+    // <div class="love" id="whoself">~ Chansi </div>
+            <button class="video-btn" onclick="openSurpriseVideo()">
+    Watch our little memory 🎥💕
+</button>
         </div>
     </div>
 
@@ -564,6 +582,9 @@ function setFunnyNoText() {
             }
             setTimeout(() => confetti.classList.add("hidden"), 7000);
         }
+        function openSurpriseVideo() {
+    window.open("surprise.mp4", "_blank");
+}
     </script>
 </body>
 
